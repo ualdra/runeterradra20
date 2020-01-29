@@ -1,2 +1,4 @@
-# runeterradra20
-Proyecto colectivo donde se pondrán en práctica los conocimientos adquiridos en la asignatura, tomando como ejemplo datos del juego de RIOT Legends of Runeterra - Desarrollo Rápido de Aplicaciones 2019 UAL
+# Legends of Runeterra DRA20
+Collective project where the knowledge acquired in the subject will be put into practice, taking as an example game data from RIOT Legends of Runeterra - Rapid Application Development 2020 UAL
+
+## Collaborators
