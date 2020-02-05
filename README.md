@@ -5,6 +5,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 * **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
 * **Francisco José Martín López** - [https://github.com/FranciscoMartLop](https://github.com/FranciscoMartLop).
+* **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
 
 # Disclaimer
 
