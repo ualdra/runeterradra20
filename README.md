@@ -3,9 +3,12 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 ## Collaborators
 
-**Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
-**Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
-**Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
+* **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+* **Francisco José Martín López** - [https://github.com/FranciscoMartLop](https://github.com/FranciscoMartLop).
+* **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
+* **Alejandro Francisco García Uclés** -  [https://github.com/AlejandroFrGU](https://github.com/AlejandroFrGU).
+* **Adalid Villanueva** - [https://https://github.com/avillanueva047](https://github.com/avillanueva047).
+* **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
 
 # Disclaimer
 
