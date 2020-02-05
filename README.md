@@ -10,6 +10,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 * **Adalid Villanueva** - [https://https://github.com/avillanueva047](https://github.com/avillanueva047).
 * **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
 * **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler).
+* **Jose Antonio Parra Sánchez** -  [https://github.com/JoseAntonioPS](https://github.com/JoseAntonioPS).
 
 # Disclaimer
 
