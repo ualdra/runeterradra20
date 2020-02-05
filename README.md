@@ -4,6 +4,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 ## Collaborators
 
 * **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+* **Adalid Villanueva** - [https://https://github.com/avillanueva047](https://github.com/avillanueva047).
 
 # Disclaimer
 
