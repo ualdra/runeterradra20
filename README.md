@@ -3,7 +3,8 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 ## Collaborators
 
-* **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
+**Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+**Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
 
 # Disclaimer
 
