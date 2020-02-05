@@ -4,6 +4,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 ## Collaborators
 
 * **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+* **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
 
 # Disclaimer
 
