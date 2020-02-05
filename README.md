@@ -3,10 +3,6 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 ## Collaborators
 
-<<<<<<< HEAD
-* **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
-* **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
-=======
 **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
 **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
 **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
