@@ -3,13 +3,11 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 ## Collaborators
 
-<<<<<<< HEAD
-* **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
-* **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler).
-=======
+
 **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
 **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
->>>>>>> 5899aaff3b776dc3a8d4b48b6467f02c38100ca3
+**Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler).
+
 
 # Disclaimer
 
