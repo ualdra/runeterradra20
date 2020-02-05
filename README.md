@@ -3,8 +3,10 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 ## Collaborators
 
-* **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+**Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+**Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
 * **Alejandro Francisco García Uclés** -  [https://github.com/AlejandroFrGU](https://github.com/AlejandroFrGU).
+
 # Disclaimer
 
 Runeterra DRA20 isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Legends of Runeterra. Legends of Runeterra and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Legends of Runeterra © Riot Games, Inc.
