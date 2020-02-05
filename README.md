@@ -4,6 +4,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 ## Collaborators
 
 * **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme).
+* **Jose Antonio Parra Sánchez** -  [https://github.com/JoseAntonioPS](https://github.com/JoseAntonioPS).
 
 # Disclaimer
 
