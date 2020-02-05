@@ -9,6 +9,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 * **Alejandro Francisco García Uclés** -  [https://github.com/AlejandroFrGU](https://github.com/AlejandroFrGU).
 * **Adalid Villanueva** - [https://https://github.com/avillanueva047](https://github.com/avillanueva047).
 * **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin).
+* **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler).
 
 # Disclaimer
 
