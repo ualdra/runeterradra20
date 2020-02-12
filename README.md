@@ -12,6 +12,8 @@ Collective project where the knowledge acquired in the subject will be put into 
 * **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler). :key:
 * **Jose Antonio Parra Sánchez** -  [https://github.com/JoseAntonioPS](https://github.com/JoseAntonioPS). :key:
 * **Laura Aguilera Checa** -  [https://github.com/lauvenders](https://github.com/lauvenders).
+* **Joaquin Francisco Sánchez Capel** - [https://github.com/JoaSanCap](https://github.com/JoaSanCap).
+
 
 # Disclaimer
 
