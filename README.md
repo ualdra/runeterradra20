@@ -11,6 +11,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 * **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin). :key:
 * **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler). :key:
 * **Jose Antonio Parra Sánchez** -  [https://github.com/JoseAntonioPS](https://github.com/JoseAntonioPS). :key:
+* **Laura Aguilera Checa** -  [https://github.com/lauvenders](https://github.com/lauvenders).
 
 # Disclaimer
 
