@@ -11,7 +11,7 @@ Collective project where the knowledge acquired in the subject will be put into 
 * **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin). :key:
 * **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler). :key:
 * **Jose Antonio Parra Sánchez** -  [https://github.com/JoseAntonioPS](https://github.com/JoseAntonioPS). :key:
-* **Joaqui Francisco Sánchez Capel** - [https://github.com/JoaSanCap](https://github.com/JoaSanCap).
+* **Joaquin Francisco Sánchez Capel** - [https://github.com/JoaSanCap](https://github.com/JoaSanCap).
 
 # Disclaimer
 
