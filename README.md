@@ -5,15 +5,15 @@ Collective project where the knowledge acquired in the subject will be put into 
 
 * **Manel Mena** -  [https://github.com/manelme](https://github.com/manelme). :key:
 * **Francisco José Martín López** - [https://github.com/FranciscoMartLop](https://github.com/FranciscoMartLop). :key:
-* **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998).
-* **Alejandro Francisco García Uclés** -  [https://github.com/AlejandroFrGU](https://github.com/AlejandroFrGU).
-* **Adalid Villanueva** - [https://https://github.com/avillanueva047](https://github.com/avillanueva047).
+* **Francisco Jesús García López** -  [https://github.com/Frangar1998](https://github.com/Frangar1998). :key:
+* **Alejandro Francisco García Uclés** -  [https://github.com/AlejandroFrGU](https://github.com/AlejandroFrGU). :key:
+* **Adalid Villanueva** - [https://https://github.com/avillanueva047](https://github.com/avillanueva047). :key:
 * **Marius Cosmin Magurean** - [https://github.com/MM-Cosmin](https://github.com/MM-Cosmin). :key:
 * **Juan Soler Márquez** -  [https://github.com/juansoler](https://github.com/juansoler). :key:
 * **Jose Antonio Parra Sánchez** -  [https://github.com/JoseAntonioPS](https://github.com/JoseAntonioPS). :key:
 * **Pablo Daniel Estévez Bretones** - [https://github.com/pablodaniel11](https://github.com/pablodaniel11).
-* **Laura Aguilera Checa** -  [https://github.com/lauvenders](https://github.com/lauvenders).
-* **Joaquin Francisco Sánchez Capel** - [https://github.com/JoaSanCap](https://github.com/JoaSanCap).
+* **Laura Aguilera Checa** -  [https://github.com/lauvenders](https://github.com/lauvenders). :key:
+* **Joaquin Francisco Sánchez Capel** - [https://github.com/JoaSanCap](https://github.com/JoaSanCap). :key:
 
 # Disclaimer
 
