@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  sonarqube:
+    image: sonarqube
+    restart: always
+
+    ports:
+      - "9000:9000"
+    environment:
+      SONARQUBE_JDBC_URL: jdbc:postgresql://db:5432/sonar
+      SONARQUBE_JDBC_USERNAME: sonar
+      SONARQUBE_JDBC_PASSWORD: sonar
+
+  db:
+    image: postgres
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+
+
+volumes:
+  postgresql_data:
