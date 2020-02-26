@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+    tomcat:
+     image: tomcat:latest
+     ports:
+       - "8080:8080"
+     restart: always
+     volumes:
+      - tomcat_data:/bitnami
+   
+volumes:
+    tomcat_data:
