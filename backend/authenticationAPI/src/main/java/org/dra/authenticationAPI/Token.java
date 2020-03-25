@@ -1,25 +1,28 @@
 package org.dra.authenticationAPI;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "TOKEN")
-public class Token {
+public class Token implements Serializable{
+	
+    @Id
+    private Long id;
 	
 	@Size(max = 100)
 	@Column(unique = true)
@@ -27,21 +30,20 @@ public class Token {
 	
 	@NotNull
 	@JsonFormat(pattern="dd-MM-yyyy")
-	@Column(name ="created_At")
+	@Column(name ="created_at")
 	private LocalDate created_at;
 	
 	@NotNull
 	@JsonFormat(pattern="dd-MM-yyyy")
-	@Column(name ="created_At")
+	@Column(name ="expired_at")
 	private LocalDate expired_at;
 	
 	@Size(max = 100)
 	@Column(unique = true)
 	private String renew_token;
 	
-	@Id
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+	@OneToOne(fetch = FetchType.LAZY)
+	@MapsId
     private User user;
 	
 	public Token() {
@@ -56,7 +58,6 @@ public class Token {
 		
 	}
 	
-	@Bean
 	public String passwordEncoder(String localDate) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(localDate);
