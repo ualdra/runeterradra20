@@ -46,7 +46,6 @@ public class User implements Serializable{
 	@Column(name = "password")
 	private String password;
 	
-	@NotNull
 	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name ="created_At")
 	private LocalDate created_At;
@@ -61,7 +60,7 @@ public class User implements Serializable{
     private Token token;
 	
 	public User() {
-		
+		this.created_At = java.time.LocalDate.now();
 	}
 	
 	public User(String username, String email, String password) {

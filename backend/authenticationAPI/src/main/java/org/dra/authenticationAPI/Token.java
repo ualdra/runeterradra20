@@ -28,12 +28,10 @@ public class Token implements Serializable{
 	@Column(unique = true)
 	private String token;
 	
-	@NotNull
 	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name ="created_at")
 	private LocalDate created_at;
 	
-	@NotNull
 	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name ="expired_at")
 	private LocalDate expired_at;
@@ -47,7 +45,8 @@ public class Token implements Serializable{
     private User user;
 	
 	public Token() {
-		
+		this.created_at = java.time.LocalDate.now();
+		this.expired_at = java.time.LocalDate.now().plusYears(1);
 	}
 	
 	public Token(String email) {
