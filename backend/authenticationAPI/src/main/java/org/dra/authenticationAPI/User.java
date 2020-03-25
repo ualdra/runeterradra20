@@ -3,11 +3,11 @@ package org.dra.authenticationAPI;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -55,7 +55,9 @@ public class User implements Serializable{
     @JoinColumn(name = "role_name", nullable = false)
     private Role role;
 	
-	@OneToOne(mappedBy = "token")
+	@OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user", optional = false)
     private Token token;
 	
 	public User() {
@@ -69,7 +71,6 @@ public class User implements Serializable{
         this.created_At = java.time.LocalDate.now();
 	}
 	
-	@Bean
 	public String passwordEncoder(String password) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(password);
