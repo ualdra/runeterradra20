@@ -49,12 +49,12 @@ public class Token implements Serializable{
 		this.expired_at = java.time.LocalDate.now().plusYears(1);
 	}
 	
-	public Token(String email) {
-		this.token = passwordEncoder(java.time.LocalDate.now().toString());
+	public Token(User user) {
+		this.token = passwordEncoder(java.time.LocalDate.now().toString()+user.getEmail());
 		this.created_at = java.time.LocalDate.now();
 		this.expired_at = java.time.LocalDate.now().plusYears(1);
 		this.renew_token = passwordEncoder(this.expired_at.toString());
-		
+		this.user = user;
 	}
 	
 	public String passwordEncoder(String localDate) {

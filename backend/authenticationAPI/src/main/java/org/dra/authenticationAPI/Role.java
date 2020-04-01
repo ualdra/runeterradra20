@@ -24,7 +24,7 @@ public class Role implements Serializable{
 	private String role_name;
 	
     @NotNull
-    @Column(name = "prority")
+    @Column(name = "priority")
 	private double priority;
     
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY,

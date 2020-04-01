@@ -36,7 +36,6 @@ public class User implements Serializable{
 	private String username;
 	
 	@NotNull
-    @Email
     @Size(max = 100)
     @Column(unique = true)
     private String email;
@@ -114,5 +113,22 @@ public class User implements Serializable{
 	public void setCreated_At(LocalDate created_At) {
 		this.created_At = created_At;
 	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Token getToken() {
+		return token;
+	}
+
+	public void setToken(Token token) {
+		this.token = token;
+	}
+	
 	
 }
