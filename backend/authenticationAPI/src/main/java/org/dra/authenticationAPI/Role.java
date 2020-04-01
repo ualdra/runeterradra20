@@ -1,5 +1,6 @@
 package org.dra.authenticationAPI;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -14,7 +15,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "ROLE") 
-public class Role {
+public class Role implements Serializable{
 
     @Id
 	@NotNull

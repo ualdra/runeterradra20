@@ -46,13 +46,12 @@ public class User implements Serializable{
 	@Column(name = "password")
 	private String password;
 	
-	@NotNull
 	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name ="created_At")
 	private LocalDate created_At;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "role_name", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_name")
     private Role role;
 	
 	@OneToOne(fetch = FetchType.LAZY,
@@ -61,7 +60,7 @@ public class User implements Serializable{
     private Token token;
 	
 	public User() {
-		
+		this.created_At = java.time.LocalDate.now();
 	}
 	
 	public User(String username, String email, String password) {
