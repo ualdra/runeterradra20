@@ -77,7 +77,7 @@ public class UserController{
 		}
 	}
 	
-	@GetMapping(value = "/checkrole")
+	@PostMapping(value = "/checkrole")
 	//checks roles of an user passing the token of the user logged
 	String checkRole (@RequestBody Token token) {
 		try {
