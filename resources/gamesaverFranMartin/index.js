@@ -4,6 +4,7 @@ const http = require('http');
 let tmpJSON = {};
 let lastState = {};
 var rectangles = [];
+var game = {};
 
 lastState = {
     "Game": {
@@ -83,18 +84,20 @@ function firstCall() {
         getDataFromGame('http://localhost:21337/positional-rectangles', lastState)
     ]).then(() => {
         
-        writingInJSON(tmpJSON);
+        saveGame(tmpJSON);
 
         var interval = setInterval(function() {
                 
-            if (lastState.Game.GameState == 'Menus')
-                clearInterval(interval);
-            else
-                main();
-    
-        }, 2000);
+            if (lastState.Game.GameState == 'Menus'){
 
-    })
+                httpRequest();
+                clearInterval(interval);
+            }else{
+                main();
+            }
+        }, 2000);
+    });
+
     
 }
 
@@ -104,15 +107,13 @@ function main() {
         getDataFromGame('http://localhost:21337/positional-rectangles', lastState)
     ]).then(() => {
         
-        writingInJSON(tmpJSON);
+        saveGame(tmpJSON);
 
     })
     
 }
 
 function writingInJSON(cardsData) {
-
-    let gameData = {};
 
     fs.exists('gameData.json', function(exists) {
 
@@ -156,6 +157,52 @@ function writingInJSON(cardsData) {
         
     });
 
+}
+
+function saveGame(cardsData){
+    if(!game.PlayerName){
+        game.PlayerName = cardsData.Game.PlayerName;
+        game.OpponentName = cardsData.Game.OpponentName;
+        game.ScreenWidth = cardsData.Game.Screen.ScreenWidth;
+        game.ScreenHeight = cardsData.Game.Screen.ScreenHeight;
+        game.GameDate = new Date();
+    }
+    game.Plays = {};
+    var i = 0;
+    cardsData.Game.Plays.forEach(play => {
+        if (JSON.stringify(game.Plays).indexOf(JSON.stringify(play)) == -1) {
+            if(play.length != 0){
+                game.Plays[i] = play;
+                i++;
+            }
+        }
+    });
+}
+
+function httpRequest(){
+    console.log(game);
+    const data = JSON.stringify(game);
+
+    const options = {
+        hostname: 'localhost',
+        port: 8080,
+        path: '/games',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      
+      const req = http.request(options, function(res) {
+        console.log(`statusCode: ${res.statusCode}`)
+        res.setEncoding('utf8');
+        res.on('data', function(chunk) {
+          console.log('Response: ' + chunk);
+        });
+      });
+      
+      req.write(data)
+      req.end()
 }
 
 function deleteJSON() {
