@@ -8,4 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface TokenRepository extends CrudRepository<Token, Long>{
 
 	Token findByToken(@Param("token") String token);
+	Token findByUser(@Param("user") User user);
 }

@@ -66,8 +66,8 @@ public class Token implements Serializable{
 		return token;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
+	public void setToken(User user) {
+		this.token = passwordEncoder(java.time.LocalDate.now().toString()+user.getEmail());
 	}
 
 	public LocalDate getCreated_at() {
