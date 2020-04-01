@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "TOKEN")
@@ -40,6 +41,7 @@ public class Token implements Serializable{
 	@Column(unique = true)
 	private String renew_token;
 	
+	@JsonManagedReference
 	@OneToOne(fetch = FetchType.LAZY)
 	@MapsId
     private User user;

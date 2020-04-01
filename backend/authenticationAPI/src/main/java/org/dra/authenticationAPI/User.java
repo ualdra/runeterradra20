@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.CascadeType;
@@ -53,6 +54,7 @@ public class User implements Serializable{
     @JoinColumn(name = "role_name")
     private Role role;
 	
+	@JsonBackReference
 	@OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
             mappedBy = "user", optional = false)
