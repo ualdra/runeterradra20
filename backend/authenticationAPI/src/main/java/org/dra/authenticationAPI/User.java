@@ -50,8 +50,8 @@ public class User implements Serializable{
 	@Column(name ="created_At")
 	private LocalDate created_At;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "role_name", nullable = false)
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "role_name")
     private Role role;
 	
 	@OneToOne(fetch = FetchType.LAZY,
