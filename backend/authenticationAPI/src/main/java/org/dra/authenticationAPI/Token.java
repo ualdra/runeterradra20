@@ -1,28 +1,28 @@
 package org.dra.authenticationAPI;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "TOKEN")
-public class Token implements Serializable{
+public class Token{
 	
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@Size(max = 100)
@@ -38,18 +38,18 @@ public class Token implements Serializable{
 	private LocalDate expired_at;
 	
 	@Size(max = 100)
-	@Column(unique = true)
 	private String renew_token;
 	
-	@JsonManagedReference
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
 	@MapsId
+	@JsonBackReference
     private User user;
 	
 	public Token() {
 		this.created_at = java.time.LocalDate.now();
 		this.expired_at = java.time.LocalDate.now().plusYears(1);
 	}
+	
 	
 	public Token(User user) {
 		this.token = passwordEncoder(java.time.LocalDate.now().toString()+user.getEmail());
@@ -64,44 +64,70 @@ public class Token implements Serializable{
         return passwordEncoder.encode(localDate);
 	}
 
+	public void generateToken(User user) {
+		this.token = passwordEncoder(java.time.LocalDate.now().toString()+user.getEmail());
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
 	public String getToken() {
 		return token;
 	}
 
-	public void setToken(User user) {
-		this.token = passwordEncoder(java.time.LocalDate.now().toString()+user.getEmail());
+
+	public void setToken(String token) {
+		this.token = token;
 	}
+
 
 	public LocalDate getCreated_at() {
 		return created_at;
 	}
 
+
 	public void setCreated_at(LocalDate created_at) {
 		this.created_at = created_at;
 	}
+
 
 	public LocalDate getExpired_at() {
 		return expired_at;
 	}
 
+
 	public void setExpired_at(LocalDate expired_at) {
 		this.expired_at = expired_at;
 	}
+
 
 	public String getRenew_token() {
 		return renew_token;
 	}
 
+
 	public void setRenew_token(String renew_token) {
 		this.renew_token = renew_token;
 	}
+
 
 	public User getUser() {
 		return user;
 	}
 
+
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
 }
+
+
+
+

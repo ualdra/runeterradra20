@@ -1,10 +1,6 @@
 package org.dra.authenticationAPI;
 
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,7 +20,7 @@ public class UserController{
 	RoleRepository rr;
 	
 	@PostMapping(value = "/login")
-	ResponseEntity<Token> login(@RequestBody User user) {
+	ResponseEntity login(@RequestBody User user) {
 		try {
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 			User u = up.findByEmail(user.getEmail());
@@ -32,7 +28,7 @@ public class UserController{
 				Token t;
 				if(u.getToken() != null) {
 					t = u.getToken();
-					t.setToken(u);
+					t.generateToken(u);
 					t = tr.save(t);
 				}
 				else {
@@ -41,15 +37,15 @@ public class UserController{
 				}
 				return new ResponseEntity<Token>(t, HttpStatus.ACCEPTED);
 			}
-			return new ResponseEntity<Token>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity("Incorrect Password", HttpStatus.BAD_REQUEST);
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return new ResponseEntity<Token>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("User doesn't exist", HttpStatus.BAD_REQUEST);
 		}
 	}
 	
 	@PostMapping(value = "/signin")
-	ResponseEntity<User> signIn(@RequestBody User user) {
+	ResponseEntity signIn(@RequestBody User user) {
 		try {
 			User u = new User(user.getUsername(), user.getEmail(), user.getPassword());
 			up.save(u);
@@ -57,49 +53,48 @@ public class UserController{
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
-			return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity("User with given email already exist",HttpStatus.BAD_REQUEST);
 		}
 	}
 	
 	@PostMapping(value = "/createrole")
-	ResponseEntity<Role> createRole(@RequestBody Role role) {
+	ResponseEntity createRole(@RequestBody Role role) {
 		try {
-			Role r = new Role(role.getRole_name(), role.getPriority());
+			Role r = new Role(role.getName(), role.getPriority());
 			rr.save(r);
 			return new ResponseEntity<Role>(r, HttpStatus.ACCEPTED);
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
-			return new ResponseEntity<Role>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("Couldn't create role", HttpStatus.BAD_REQUEST);
 		}
 	}
 	
 	@PutMapping(value = "/assignrole")
-	ResponseEntity<User> assignRole(@RequestBody User user) {
+	ResponseEntity assignRole(@RequestBody User user) {
 		try {
 			User u = up.findByEmail(user.getEmail());
-			u.setRole(user.getRole());
+			Role r = rr.findByName(user.getRole().getName());
+			u.setRole(r);
 			up.save(u);
 			return new ResponseEntity<User>(u, HttpStatus.ACCEPTED);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("Couldn't assign role to the given User", HttpStatus.BAD_REQUEST);
 		}
 	}
 	
-	@PostMapping(value = "/checkrole")
+	@PostMapping(value = "/checktoken")
 	//checks roles of an user passing the token of the user logged
-	ResponseEntity<Role> checkRole (@RequestBody Token token) {
+	ResponseEntity checkToken (@RequestBody Token token) {
 		try {
 			Token t = tr.findByToken(token.getToken());
-			User u = up.findByToken(t);
-			return new ResponseEntity<Role>(u.getRole(), HttpStatus.ACCEPTED);
+			return new ResponseEntity<User>(t.getUser(), HttpStatus.ACCEPTED);
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();
-			return new ResponseEntity<Role>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("User not found with the given Token", HttpStatus.BAD_REQUEST);
 		}
 	}
-	
-	
+
 }
