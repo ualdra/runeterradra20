@@ -88,6 +88,7 @@ public class UserController{
 	//checks roles of an user passing the token of the user logged
 	ResponseEntity checkToken (@RequestBody Token token) {
 		try {
+			System.out.println(token.getToken());
 			Token t = tr.findByToken(token.getToken());
 			return new ResponseEntity<User>(t.getUser(), HttpStatus.ACCEPTED);
 		}
