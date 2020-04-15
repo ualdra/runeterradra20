@@ -1,6 +1,5 @@
 package org.dra.authenticationAPI;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,13 +16,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "USERS")
-public class User implements Serializable{
+public class User{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +33,6 @@ public class User implements Serializable{
 	private String username;
 	
 	@NotNull
-    @Email
     @Size(max = 100)
     @Column(unique = true)
     private String email;
@@ -50,12 +46,13 @@ public class User implements Serializable{
 	@Column(name ="created_At")
 	private LocalDate created_At;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	
+	@ManyToOne
     @JoinColumn(name = "role_name")
     private Role role;
 	
-	@OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
+	
+	@OneToOne(cascade =  CascadeType.ALL,
             mappedBy = "user", optional = false)
     private Token token;
 	
@@ -114,5 +111,22 @@ public class User implements Serializable{
 	public void setCreated_At(LocalDate created_At) {
 		this.created_At = created_At;
 	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Token getToken() {
+		return token;
+	}
+
+	public void setToken(Token token) {
+		this.token = token;
+	}
+	
 	
 }

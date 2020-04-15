@@ -1,51 +1,60 @@
 package org.dra.authenticationAPI;
 
-import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "ROLE") 
-public class Role implements Serializable{
+public class Role{
 
     @Id
 	@NotNull
 	@Size(max = 100)
-	@Column(name = "role_name")
-	private String role_name;
+	@Column(name = "name")
+	private String name;
 	
     @NotNull
-    @Column(name = "prority")
+    @Column(name = "priority")
 	private double priority;
     
-    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
+    @JsonBackReference
     private Set<User> users;
 	
     public Role() {
     	
     }
     
-    public Role(String roleName, double priority) {
-    	this.role_name = roleName;
+    public Role(String name, double priority) {
+    	this.name = name;
     	this.priority = priority;
     }
 
-	public String getRole_name() {
-		return role_name;
+
+	public Set<User> getUsers() {
+		return users;
 	}
 
-	public void setRole_name(String role_name) {
-		this.role_name = role_name;
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public double getPriority() {
