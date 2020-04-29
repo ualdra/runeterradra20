@@ -1,0 +1,8 @@
+FROM openjdk:11
+
+RUN mkdir /home/authenticationAPI/
+WORKDIR /home/authenticationAPI/
+COPY ./authenticationAPI-0.0.1-SNAPSHOT.jar /home/authenticationAPI/authenticationAPI.jar
+EXPOSE 8083
+
+CMD [ "java", "-jar", "authenticationAPI.jar"]

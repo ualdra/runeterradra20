@@ -1,8 +1,0 @@
-FROM openjdk:11
-
-RUN mkdir /home/cardsAPI/
-WORKDIR /home/cardsAPI/
-COPY ./target/rest-0.0.1-SNAPSHOT.jar /home/cardsAPI/cardsAPI.jar
-EXPOSE 5432
-
-CMD [ "java", "-jar", "cardsAPI.jar" ]

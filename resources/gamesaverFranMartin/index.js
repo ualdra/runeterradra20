@@ -184,8 +184,8 @@ function httpRequest(){
     const data = JSON.stringify(game);
 
     const options = {
-        hostname: 'localhost',
-        port: 8080,
+        hostname: '192.168.1.22',
+        port: 8081,
         path: '/games',
         method: 'POST',
         headers: {
