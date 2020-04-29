@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+   jenkins:
+    image: jenkins:latest
+    container_name: Jenkin_Compose
+    volumes:
+        - ./ci_data:/var/lib/jenkins
+    ports:
+       - "8080:8080"
+    restart: always
+volumes:
+    ci_data:
