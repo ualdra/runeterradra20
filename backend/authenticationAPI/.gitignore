@@ -6,6 +6,7 @@ target/
 !**/src/main/**
 !**/src/test/**
 .mvn/wrapper
+/bin
 ### STS ###
 .apt_generated
 .classpath
