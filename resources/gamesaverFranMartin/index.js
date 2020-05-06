@@ -44,7 +44,6 @@ function getDataFromGame(url, lastState) {
             });
             
             resp.on('end', () => {
-                
                 if (lastState.Game.Plays[lastState.Game.Plays.length - 1] != JSON.parse(data).Rectangles) {
                     
                     //Guardo lastState
@@ -184,9 +183,8 @@ function httpRequest(){
     const data = JSON.stringify(game);
 
     const options = {
-        hostname: 'localhost',
-        port: 8080,
-        path: '/games',
+        hostname: 'apis.manelme.com',
+        path: '/replay/games',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
