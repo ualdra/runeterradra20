@@ -9,7 +9,7 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 })
 export class LoginService {
 
-  private apiUrl = 'localhost:8080/api'
+  private apiUrl = 'http://apis.manelme.com/auth'
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

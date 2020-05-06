@@ -27,8 +27,4 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  signIn(username: string, password: string, email: string): void {
-    this.authenticationService.signIn(username, password, email);
-  }
-
 }

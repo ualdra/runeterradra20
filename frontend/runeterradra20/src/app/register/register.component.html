@@ -1,19 +1,28 @@
-<div class="login-main-container">
-    <div>
+<div class="app-register">
+    <div class="register-image"></div>
+    <div class="register-container">
+        <div></div>
+        <div>
         <form>
             <div>
-                <input #username type="text" formControlName="username" required>/
+                <p>Registrate aquí</p>
             </div>
             <div>
-                <input #email ngModel type="email" formControlName="email" required/>
+                <input #username class="register-input" ngModel type="text" formControlName="username" placeholder="Username" required>
             </div>
             <div>
-                <input #password ngModel type="password" formControlName="password" required/>
+                <input #email class="register-input" ngModel type="email" formControlName="email" placeholder="Email" required/>
             </div>
             <div>
-                <button (click)="register(email.value, password.value)" type="submit">Register</button>
+                <input #password class="register-input" ngModel type="password" formControlName="password" placeholder="Password" required/>
+            </div>
+            <div>
+                <button class="register-button" (click)="signIn(username.value, email.value, password.value)" type="submit">Registrarse</button>
             </div>
         </form>
     </div>
-hola
+    <div>
+        <p><a class="login-button" [routerLink]="['/login']" routerLinkActive="router-link-active" >Inicia sesión con una cuenta</a></p>
+    </div>
+</div>
 </div>
