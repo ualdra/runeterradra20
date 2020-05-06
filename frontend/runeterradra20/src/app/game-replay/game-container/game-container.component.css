@@ -1,0 +1,22 @@
+.title1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: .02em;
+  line-height: 1.25;
+  font-size: 3.6rem;
+  color: #d5d2c9;
+  padding: 0 10%;
+}
+
+.game-list {
+  position: relative;
+  margin: 4rem auto 0;
+  max-width: 150rem;
+}
+
+.main-background {
+  text-align: center;
+  background: repeat url(../../../assets/background-dark-grey-noise.jpg) 0 0;
+}

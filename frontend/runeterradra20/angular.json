@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "runeterradra20"
+    }
+  },
+  "defaultProject": "runeterradra20",
+  "cli": {
+    "analytics": false
+  }
 }
