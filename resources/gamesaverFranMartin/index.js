@@ -183,16 +183,15 @@ function httpRequest(){
     const data = JSON.stringify(game);
 
     const options = {
-        hostname: 'localhost',
-        port: 8080,
-        path: '/games',
+        hostname: 'apis.manelme.com',
+        path: '/replay/games',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         }
       }
       
-      const req = http.request('http://apis.manelme.com/replay/games', function(res) {
+      const req = http.request(options, function(res) {
         console.log(`statusCode: ${res.statusCode}`)
         res.setEncoding('utf8');
         res.on('data', function(chunk) {
