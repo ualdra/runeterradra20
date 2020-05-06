@@ -68,4 +68,23 @@ export class LoginService {
     );
   }
 
+  getToken(){
+    return this.localStorage.getItem('token').pipe(
+      tap(
+        data => {
+          this.token = data;
+          if(this.token != null){
+            this.isLoggedIn = true;
+          } else{
+            this.isLoggedIn = false;
+          }
+        },
+        error => {
+          this.token;
+          this.isLoggedIn = false;
+        }
+      )
+    )
+  }
+
 }
