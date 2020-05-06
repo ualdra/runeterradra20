@@ -1,0 +1,47 @@
+.app-register {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "register-image register-container";
+    grid-template-columns: minmax(80%, 20%);
+    grid-gap: 0;
+  }
+  
+  .register-image {
+    grid-area: register-image;
+    background-color: #80808014;
+    background-image: url(https://dd.b.pvp.net/1_0_0/set1/en_us/img/cards/01NX020-full.png);
+    background-size: cover;
+  }
+  
+  .register-main-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .register-container {
+    grid-area: register-container;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+  .register-input {
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 11px;
+    background-color: #80808047;
+  }
+  
+  .register-button {
+    border-radius: 5px;
+    border-color: #d5d5d5;
+    padding: 7px 15px;
+    background-color: whitesmoke;
+  }
+  
+  .login-button {
+    text-decoration: none;
+    color: black !important;
+  }
+  
