@@ -6,7 +6,7 @@ import { GameContainerComponent } from './game-replay/game-container/game-contai
 
 const routes: Routes = [
   { path: '', redirectTo: '/games', pathMatch: 'full' },
-  {path: 'games', component: GameListComponent }
+  {path: 'games', loadChildren: () => import('./game-replay/game-replay.module').then(m => m.GameReplayModule) }
 ];
 
 @NgModule({

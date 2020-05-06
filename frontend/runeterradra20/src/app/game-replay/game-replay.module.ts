@@ -7,7 +7,7 @@ import { GameListComponent } from './game-list/game-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { GameService } from './game.service';
-
+import { GameReplayRoutingModule  } from './game-replay-routing.module';
 
 @NgModule({
   declarations: [GameContainerComponent,
@@ -15,8 +15,9 @@ import { GameService } from './game.service';
      CardInGameComponent,
     GameListComponent],
   imports: [
+    GameReplayRoutingModule,
     HttpClientModule,
-    BrowserModule
+    CommonModule
   ],
   providers:[GameService
   ]

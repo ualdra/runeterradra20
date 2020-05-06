@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-import { Game } from './Game';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +10,7 @@ export class GameService {
 
   constructor(private http: HttpClient) { }
 
-  getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.gamesApiUrl);
+  getGames(){
+    return this.http.get(this.gamesApiUrl);
   }
 }
