@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="login-main-container">
+    <div>
+        <form>
+            <div>
+                <input #email ngModel type="email" formControlName="email" required/>
+            </div>
+            <div>
+                <input #password ngModel type="password" formControlName="password" required/>
+            </div>
+            <div>
+                <button (click)="login(email.value, password.value)" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+hola
+</div>
+
+<!--
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="first" ngModel required #first="ngModel">
+    <input name="last" ngModel>
+    <button>Submit</button>
+  </form>
+--> 
