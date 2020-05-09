@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -52,4 +52,5 @@ export class LoginComponent implements OnInit {
     var div = document.querySelector('.login-image') as HTMLElement;
     div.style.backgroundImage = 'url(' + this.cards[index].assets[0].fullAbsolutePath + ')';
   }
+  
 }
