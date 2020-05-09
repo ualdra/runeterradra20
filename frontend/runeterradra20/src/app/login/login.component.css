@@ -9,7 +9,6 @@
 .login-image {
   grid-area: login-image;
   background-color: #80808014;
-  background-image: url(https://dd.b.pvp.net/1_0_0/set1/en_us/img/cards/01NX020-full.png);
   background-size: cover;
 }
 

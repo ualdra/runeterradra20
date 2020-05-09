@@ -8,7 +8,7 @@
                     <p>Login</p>
                 </div>
                 <div>
-                    <input class="login-input" #email ngModel type="email" placeholder="Username"
+                    <input class="login-input" #email ngModel type="email" placeholder="Email"
                         formControlName="email" required />
                 </div>
                 <div>
@@ -16,8 +16,7 @@
                         formControlName="password" required />
                 </div>
                 <div>
-                    <button class="login-button" (click)="login(email.value, password.value)"
-                        type="submit">Iniciar sesión</button>
+                    <button class="login-button" (click)="login(email.value, password.value)" type="button">Iniciar sesión</button>
                 </div>
             </form>
             

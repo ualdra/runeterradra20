@@ -6,6 +6,7 @@ import { LoginRoutingModule } from './login-module-routing.module'
 import { LoginService } from '../login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from '../register/register.component';
+import { MainSelectorComponent } from '../main-selector/main-selector.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { RegisterComponent } from '../register/register.component';
   declarations: [
     LoginModuleComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    MainSelectorComponent
   ],
   providers: [
     LoginService

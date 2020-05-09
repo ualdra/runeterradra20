@@ -1,0 +1,46 @@
+.app-selector {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "selector-image selector-container";
+    grid-template-columns: minmax(80%, 20%);
+    grid-gap: 0;
+  }
+  
+  .selector-image {
+    grid-area: selector-image;
+    background-color: #80808014;
+    background-size: cover;
+  }
+  
+  .selector-main-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .selector-container {
+    grid-area: selector-container;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+  .selector-input {
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 11px;
+    background-color: #80808047;
+  }
+  
+  .selector-button {
+    border-radius: 5px;
+    border-color: #d5d5d5;
+    padding: 7px 15px;
+    background-color: whitesmoke;
+  }
+  
+  .selector-button {
+    text-decoration: none;
+    color: black !important;
+  }
+  
