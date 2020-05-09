@@ -44,6 +44,7 @@ function getDataFromGame(url, lastState) {
             });
             
             resp.on('end', () => {
+                
                 if (lastState.Game.Plays[lastState.Game.Plays.length - 1] != JSON.parse(data).Rectangles) {
                     
                     //Guardo lastState
@@ -192,7 +193,7 @@ function httpRequest(){
         }
       }
       
-      const req = http.request('http://apis.manelme.com/replay/games', function(res) {
+      const req = http.request(options, function(res) {
         console.log(`statusCode: ${res.statusCode}`)
         res.setEncoding('utf8');
         res.on('data', function(chunk) {
