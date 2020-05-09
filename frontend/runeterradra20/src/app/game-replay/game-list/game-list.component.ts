@@ -9,7 +9,7 @@ import { Game } from '../Game';
 })
 export class GameListComponent implements OnInit {
   games;
-  
+  countPlays;
   constructor(private gameService: GameService) { 
 
   }
@@ -17,6 +17,8 @@ export class GameListComponent implements OnInit {
   ngOnInit(): void {
     console.log("lol");
     this.getGames();
+    
+   
   }
   
   getGames():void{
@@ -25,5 +27,7 @@ export class GameListComponent implements OnInit {
       console.log(datos._embedded.games)
       this.games = datos._embedded.games
     });
+ 
   }
+
 }
