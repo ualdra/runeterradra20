@@ -184,9 +184,8 @@ function httpRequest(){
     const data = JSON.stringify(game);
 
     const options = {
-        hostname: 'localhost',
-        port: 8080,
-        path: '/games',
+        hostname: 'apis.manelme.com',
+        path: '/replay/games',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

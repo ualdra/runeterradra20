@@ -1,0 +1,24 @@
+<div class="main-background">
+  <header>
+    <h2 class="title1">
+      Games of Runaterra
+    </h2>
+  </header>
+  <div>
+    <ul *ngFor="let game of games">
+      <li>
+        <a routerLink="/game/{{game.GameDate}}">
+          Jugadores: {{game.PlayerName}} vs {{game.OpponentName}} 
+          Resolucion: {{game.ScreenWidth}}/{{game.ScreenHeight}}
+          Fecha: {{game.GameDate}}
+          NumRondas: {{game.Plays}}
+          NumJugadas: {{game.Plays.array}}
+          Resultado: Derrota
+          CCCCC: {{countPlays}}
+        </a>
+        
+      </li>
+    </ul>
+
+  </div>
+</div>
