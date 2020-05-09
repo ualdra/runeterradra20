@@ -18,8 +18,8 @@ const routes: Routes = [
         path: 'register',
         component: RegisterComponent
     }, {
-      path: 'selector',
-      component: MainSelectorComponent
+        path: 'selector',
+        component: MainSelectorComponent
     }
 ];
 

@@ -21,52 +21,23 @@ export class LoginService {
   constructor(
     private http: HttpClient) { }
 
-  signIn(username: string, password: string, email: string): Observable<any> {
+  signIn(username: string, password: string, email: string) {
     const url = `${this.apiUrl}/signin`;
     let user = {
       'username': username,
       'password': password,
       'email': email
     }
-    return this.http.post<any>(url, user, this.httpOptions)
-    .pipe(
-      tap( token => {
-        this.localStorage.setItem('token', token)
-        .pipe(
-          tap( () => {
-              console.log('Token Stored');
-              error => console.error('Error storing item', error)
-              this.token = token;
-              this.isLoggedIn = true;
-            }
-          )
-        );
-        return token;
-      }),
-    );
+    return this.http.post(url, user, this.httpOptions);
   }
 
-  login(email: string, password: string): Observable<any> {
+  login(email: string, password: string) {
     const url = `${this.apiUrl}/login`;
     let user = {
       'password': password,
       'email': email
     }
-    return this.http.post<any>(url, user, this.httpOptions).pipe(
-      tap( token => {
-        this.localStorage.setItem('token', token)
-        .pipe(
-          tap( () => {
-              console.log('Token Stored');
-              error => console.error('Error storing item', error)
-              this.token = token;
-              this.isLoggedIn = true;
-            }
-          )
-        );
-        return token;
-      }),
-    );
+    return this.http.post(url, user, this.httpOptions);
   }
 
   getToken(){
@@ -92,4 +63,7 @@ export class LoginService {
     return await this.http.get(this.apiCards).toPromise();
   }
 
+  deleteUser(user: any){
+    return this.http.delete(this.apiUrl + '/auth/users/2');
+  }
 }
