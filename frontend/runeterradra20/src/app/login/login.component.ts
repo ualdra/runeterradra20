@@ -23,11 +23,15 @@ export class LoginComponent implements OnInit {
 
   login(email: string, password: string): void {
     this.authenticationService.login(email, password).subscribe(
+      (next: any) => {
+        console.log(next);
+        console.log("is logged in")
+        localStorage.setItem("token", next.token);
+        this.authenticationService.deleteUser(next)
+        this.route.navigate(['selector']);
+      },
       error => {
         console.log(error);
-      },
-      () => {
-        this.route.navigate(['selector']);
       }
     );
   }

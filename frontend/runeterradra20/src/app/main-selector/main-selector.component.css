@@ -1,29 +1,76 @@
-.app-selector {
+  .app-selector {
     height: 100vh;
     display: grid;
-    grid-template-areas: "selector-image selector-container";
-    grid-template-columns: minmax(80%, 20%);
+    grid-template-areas: "selector-image selector-image selector-image selector-image selector-container";
+    /* grid-template-columns: minmax(80%, 20%); */
     grid-gap: 0;
+    background-color: rgb(48, 4, 84);
   }
-  
+
   .selector-image {
     grid-area: selector-image;
     background-color: #80808014;
     background-size: cover;
   }
-  
+
   .selector-main-container {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  
+
+  .title{
+    align-self: center;
+    color: white;
+    display: inline-grid;
+    margin: 18%;
+    justify-content: center;
+  }
+
   .selector-container {
     grid-area: selector-container;
     text-align: center;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "card-selector"
+      "card-selector"
+      "deck-builder"
+      "match-replay"
+      "match-replay";
+    justify-content: space-between;
+    align-items: center;
+    max-width: 0vw;
   }
-  
+
+  .card-selector {
+    align-content: center;
+    grid-area: card-selector;
+    align-self: flex-end;
+  }
+
+  .deck-builder {
+    grid-area: deck-builder;
+    align-self: center;
+  }
+
+  .match-replay {
+    grid-area: match-replay;
+    align-self: flex-start;
+  }
+
+  .selector-item {
+    background-image: url("https://as.com/meristation/imagenes/2020/03/03/noticias/1583249217_275426_1583249507_noticia_normal.jpg");
+    background-size: cover;
+    width: 100%;
+    min-width: 200px;
+    min-height: 10vh;
+    margin-left: -5vw;
+    border-radius: 10px;
+  }
+
+  .selector-item:hover{
+    border: 2px solid goldenrod;
+  }
+
   .selector-input {
     border: none;
     margin: 10px;
@@ -31,16 +78,15 @@
     padding: 11px;
     background-color: #80808047;
   }
-  
+
   .selector-button {
     border-radius: 5px;
     border-color: #d5d5d5;
     padding: 7px 15px;
     background-color: whitesmoke;
   }
-  
+
   .selector-button {
     text-decoration: none;
     color: black !important;
   }
-  
