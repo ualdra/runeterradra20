@@ -9,7 +9,8 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 })
 export class LoginService {
 
-  private apiUrl = 'http://apis.manelme.com/auth'
+  private apiUrl = 'http://apis.manelme.com/auth';
+  private apiCards = 'http://apis.manelme.com/data/cards';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -85,6 +86,25 @@ export class LoginService {
         }
       )
     )
+  }
+
+   private getCards(){
+    return this.http.get(this.apiCards);
+  }
+
+  getCardImages(){
+    var images: any[];
+     this.getCards().subscribe(
+      (cards: any) => {
+        let card: any;
+        for(card in cards){
+          if(card.rarity == "Champion"){
+            images.push(card.assets[0].fullAbsolutePath);
+          }
+        }
+      }
+    );
+    return images;
   }
 
 }

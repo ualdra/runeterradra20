@@ -11,9 +11,11 @@ export class LoginComponent implements OnInit {
 
   agnForm: NgForm;
   constructor(private authenticationService: LoginService) { }
+  private cards: any[];
 
   ngOnInit(): void {
-
+    this.getCardImageURL();
+    console.log(this.cards);
   }
 
   login(email: string, password: string): void {
@@ -27,4 +29,11 @@ export class LoginComponent implements OnInit {
     );
   }
 
+ getCardImageURL(){
+   this.authenticationService.getCardImages().map(
+      (image) => {
+        this.cards.push(image);
+      }
+    );  
+  }
 }
