@@ -88,23 +88,8 @@ export class LoginService {
     )
   }
 
-   private getCards(){
-    return this.http.get(this.apiCards);
-  }
-
-  getCardImages(){
-    var images: any[];
-     this.getCards().subscribe(
-      (cards: any) => {
-        let card: any;
-        for(card in cards){
-          if(card.rarity == "Champion"){
-            images.push(card.assets[0].fullAbsolutePath);
-          }
-        }
-      }
-    );
-    return images;
+  async getCards(){
+    return await this.http.get(this.apiCards).toPromise();
   }
 
 }
