@@ -8,15 +8,12 @@
     <ul *ngFor="let game of games">
       <li>
         <a routerLink="/game/{{game.GameDate}}">
-          Jugadores: {{game.PlayerName}} vs {{game.OpponentName}} 
+          Jugadores: {{game.PlayerName}} vs {{game.OpponentName}}
           Resolucion: {{game.ScreenWidth}}/{{game.ScreenHeight}}
           Fecha: {{game.GameDate}}
           NumRondas: {{game.Plays}}
-          NumJugadas: {{game.Plays.array}}
-          Resultado: Derrota
-          CCCCC: {{countPlays}}
         </a>
-        
+
       </li>
     </ul>
 
