@@ -3,22 +3,6 @@
     <h2 class="title1">
       Games of Runaterra
     </h2>
-<<<<<<< HEAD
-  </header>
-  <div>
-    <ul *ngFor="let game of games">
-      <li>
-        <a routerLink="/game/{{game.GameDate}}">
-          Jugadores: {{game.PlayerName}} vs {{game.OpponentName}}
-          Resolucion: {{game.ScreenWidth}}/{{game.ScreenHeight}}
-          Fecha: {{game.GameDate}}
-          NumRondas: {{game.Plays}}
-        </a>
-
-      </li>
-    </ul>
-
-=======
   </header> -->
   <div class = "gamesContainer">
     <div class = "gameDetail" *ngFor="let game of games" (click)="gameDetail(game)">
@@ -27,6 +11,5 @@
       <p>Fecha: {{game.GameDate}}</p>
       <p>NumRondas: {{game.playsCount}}</p>
     </div>
->>>>>>> 93dfa42f29ba100778f01c1e08d432df553c5538
   </div>
 </div>

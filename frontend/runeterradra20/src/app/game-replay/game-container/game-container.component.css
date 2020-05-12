@@ -17,9 +17,7 @@
 }
 
 .game-list {
-  position: relative;
-  margin: 4rem auto 0;
-  max-width: 150rem;
+
 }
 
 .main-background {
@@ -31,5 +29,16 @@
   bottom: 0px;
   left:0px;
   right:0px;
+}
 
+#back-button {
+  position: absolute;
+  right: 100px;
+  bottom: 10px;
+}
+
+#forward-button {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
 }
