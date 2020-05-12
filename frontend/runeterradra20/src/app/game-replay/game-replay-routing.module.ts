@@ -5,8 +5,8 @@ import { GameContainerComponent } from './game-container/game-container.componen
 
 
 const routes: Routes = [
-  { path: '', component: GameContainerComponent },
-  { path: 'game', component: GameContainerComponent },
+  { path: '', component: GameListComponent },
+  { path: 'game/:id', component: GameContainerComponent },
   { path: 'games', component: GameListComponent },
 ];
 

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { GameService } from './game.service';
 import { GameReplayRoutingModule  } from './game-replay-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [GameContainerComponent,
@@ -17,7 +18,8 @@ import { GameReplayRoutingModule  } from './game-replay-routing.module';
   imports: [
     GameReplayRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers:[GameService
   ]
