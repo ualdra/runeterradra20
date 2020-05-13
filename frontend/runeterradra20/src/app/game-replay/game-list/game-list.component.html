@@ -5,7 +5,7 @@
     </h2>
   </header> -->
   <div class = "gamesContainer">
-    <div class = "gameDetail" *ngFor="let game of games" (click)="gameDetail(game)">
+    <div class = "gameDetail block" *ngFor="let game of games" (click)="gameDetail(game)" [ngStyle]="{background: 'url('+game.backgroundImage+')', 'background-size': 'cover', 'background-repeat':'no-repeat'}">
       <p>Jugadores: {{game.PlayerName}} vs {{game.OpponentName}} </p>
       <p>Resolucion: {{game.ScreenWidth}}/{{game.ScreenHeight}}</p>
       <p>Fecha: {{game.GameDate}}</p>

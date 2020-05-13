@@ -25,7 +25,8 @@ export class GameService {
     return this.http.get(this.gamesApiUrl+"/"+id);
   }
 
-  getCardByCode(code){
+  getCardByCode(cardCode){
+    return this.http.get(this.cardsApiUrl+"/"+cardCode);
   }
 
   getCardBackground(game):any{
@@ -35,29 +36,21 @@ export class GameService {
       let vargame = Object.entries(game.Plays);
       for(let i = 0;i<vargame.length;i++){
         for(let j = 0;j < vargame[i].length;j++){
-          //console.log(vargame[i][j]);
           let jugada:any = vargame[i][j];
           for(let k = 0;k< jugada.length;k++){
-            //console.log(jugada[k]);
-
             if(jugada[k]["CardCode"]!==undefined && jugada[k]["CardCode"]!=="face"){
-
-
               if( jugada[k]["LocalPlayer"]=='true' && is_local==false){
                 im_local = jugada[k];
                 is_local = true;
               }
-
               if( jugada[k]["LocalPlayer"]=='false' && is_vs==false){
                 im_vs = jugada[k];
                 is_vs = true;
               }
-
               if(is_local && is_vs){
                 break;
               }
             }
-
           }
         }
       }
