@@ -24,10 +24,11 @@ export class CardInGameComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.navW = window.screen.width;
-    this.navH = window.screen.height;
+    this.navW = window.innerWidth;
+    this.navH = window.innerHeight;
     console.log(this.navW+" "+this.navH);
-    this.cardStyle = {bottom: ((this.card.TopLeftY*this.navH)/this.screenH)-((this.card.Width*1.508*this.navW)/this.screenW)+'px', left: (this.card.TopLeftX*this.navW)/this.screenW+'px', height: (this.card.Width*1.508*this.navW)/this.screenW+'px', width: (this.card.Width*this.navW)/this.screenW+'px', background: 'url(http://dd.b.pvp.net/1_0_0/set1/en_us/img/cards/' + this.card.CardCode + '.png)', 'background-size': 'contain'}
+    if(this.card.CardCode!="face") this.cardStyle = {bottom: ((this.card.TopLeftY*this.navH)/this.screenH)-((this.card.Height*this.navW)/this.screenW)+'px', left: (this.card.TopLeftX*this.navW)/this.screenW+'px', height: (this.card.Height*this.navW)/this.screenW+'px', width: (this.card.Width*this.navW)/this.screenW+'px', background: 'url(http://dd.b.pvp.net/1_0_0/set1/en_us/img/cards/' + this.card.CardCode + '.png)', 'background-size': 'contain', 'background-repeat':'no-repeat'}
+    else this.cardStyle = {bottom: ((this.card.TopLeftY*this.navH)/this.screenH)-((this.card.Height*this.navW)/this.screenW)+'px', left: (this.card.TopLeftX*this.navW)/this.screenW+'px', height: (this.card.Height*this.navW)/this.screenW+'px', width: (this.card.Width*this.navW)/this.screenW+'px', background: 'url(https://vignette.wikia.nocookie.net/leagueoflegends/images/7/7e/LoR_Summoner%27s_Rift_Card_Back.png)', 'background-size': 'contain', 'background-repeat':'no-repeat'}
   }
 
   /*"CardID" : "1464064825",
@@ -39,3 +40,5 @@ export class CardInGameComponent implements OnInit, OnChanges {
     "LocalPlayer" : "true"
 */
 }
+
+/* 1.508 */

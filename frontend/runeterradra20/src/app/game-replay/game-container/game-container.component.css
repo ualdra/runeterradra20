@@ -22,16 +22,29 @@
 
 .main-background {
   text-align: center;
-  background: no-repeat url(https://vignette.wikia.nocookie.net/leagueoflegends/images/9/97/LoR_Cursed_Ruins_Board.png/revision/latest/scale-to-width-down/1000?cb=20200214024245) 0 0;
+  background: no-repeat url(https://static.invenglobal.com/upload/image/2020/01/22/i1579710518053578.png) 0 0;
   background-size: 100% 100%;
   position: absolute;
   top: 0px;
   bottom: 0px;
   left:0px;
   right:0px;
+  overflow: hidden;
 }
 
 #back-button {
+  position: absolute;
+  right: 220px;
+  bottom: 10px;
+}
+
+#play-button{
+  position: absolute;
+  right: 160px;
+  bottom: 10px;
+}
+
+#pause-button{
   position: absolute;
   right: 100px;
   bottom: 10px;
@@ -42,3 +55,4 @@
   right: 20px;
   bottom: 10px;
 }
+
