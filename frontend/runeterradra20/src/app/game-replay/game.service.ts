@@ -21,6 +21,13 @@ export class GameService {
     return this.http.get(this.cardsApiUrl);
   }
 
+  getGameById(id){
+    return this.http.get(this.gamesApiUrl+"/"+id);
+  }
+
+  getCardByCode(code){
+  }
+
   getCardBackground(game):any{
       let im_local,im_vs;
       let is_local = false;
@@ -35,7 +42,7 @@ export class GameService {
 
             if(jugada[k]["CardCode"]!==undefined && jugada[k]["CardCode"]!=="face"){
 
-              
+
               if( jugada[k]["LocalPlayer"]=='true' && is_local==false){
                 im_local = jugada[k];
                 is_local = true;
@@ -59,7 +66,7 @@ export class GameService {
     //console.log(im_local,im_vs);
     /*
     this.getCards().subscribe((datos:any) =>{
-        
+
         for(let n = 0;n<datos.length;n++){
           if(datos[n].cardCode == im_local.CardCode){
             img_local = datos[n].assets[0].fullAbsolutePath;
@@ -70,8 +77,8 @@ export class GameService {
           }
 
           if(img_local !== undefined && img_vs !== undefined){
-            
-          
+
+
           }
         }
     })

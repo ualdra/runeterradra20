@@ -1,11 +1,10 @@
 <div class="main-background">
-  <header>
-    <h2 class="title1">
-      Games of Runaterra
-    </h2>
-  </header>
   <div class="game-list">
-
+      <app-card-in-game class="card" *ngFor="let card of game.Plays[currentPlay]" [card]=card [screenW]="game.ScreenWidth" [screenH]="game.ScreenHeight"></app-card-in-game>
   </div>
-  <app-replay-controlls></app-replay-controlls>
+  <button (click)="patras()" id="back-button">Patras</button>
+  <button (click)="play()" id="play-button">Play</button>
+  <button (click)="pause()" id="pause-button">Pause</button>
+  <button (click)="palante()" id="forward-button">Palante</button>
 </div>
+

@@ -44,6 +44,7 @@ function getDataFromGame(url, lastState) {
             });
             
             resp.on('end', () => {
+                
                 if (lastState.Game.Plays[lastState.Game.Plays.length - 1] != JSON.parse(data).Rectangles) {
                     
                     //Guardo lastState
