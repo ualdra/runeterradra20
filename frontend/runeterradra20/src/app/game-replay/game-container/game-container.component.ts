@@ -14,7 +14,7 @@ export class GameContainerComponent implements OnInit {
   currentPlay = 0;
   playGame: any;
 
-  constructor(private gameService: GameService, private activatedRoute: ActivatedRoute ) { }
+  constructor(private gameService: GameService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getData();
@@ -27,14 +27,21 @@ export class GameContainerComponent implements OnInit {
     });
   }
 
-  patras(){
-    this.currentPlay--;
+  back(){
+    if(this.currentPlay != 0){
+      this.currentPlay--;
+    }  
   }
 
-  palante(){
-    this.currentPlay++;
+  forward(){
+    if(this.currentPlay == this.lastPlay){
+      this.currentPlay = 0;
+    }else{
+      this.currentPlay++;
+    }
   }
   play(){
+    clearInterval(this.playGame);
     this.playGame = setInterval(()=>{
       if(this.currentPlay<this.lastPlay) this.currentPlay++;
       else clearInterval(this.playGame);
@@ -44,5 +51,19 @@ export class GameContainerComponent implements OnInit {
   pause(){
     clearInterval(this.playGame);
   }
+
+  procesarPropagar(mensaje)
+  {
+    if(mensaje == "forward"){
+      this.forward();
+    }else if(mensaje == "back"){
+      this.back();
+    }else if(mensaje == "play"){
+      this.play();
+    }else{
+      this.pause();
+    }
+  }
+
 
 }
