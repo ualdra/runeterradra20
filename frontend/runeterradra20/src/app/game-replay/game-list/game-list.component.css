@@ -27,8 +27,13 @@ body{
   
   .main-background {
     text-align:justify;
-    /*background: repeat url(../../../assets/background-dark-grey-noise.jpg) 0 0;*/
+    background: repeat url(../../../assets/background-dark-grey-noise.jpg);
+    position: absolute;
     margin-top:0;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
   }
   
   li {
@@ -59,14 +64,21 @@ body{
   }
 .gameDetail{
   display:grid;
+  text-align: center;
   grid-template-columns: 1fr;
   background: #ffffff;
-  box-shadow:  20px 20px 60px lightgrey, 
-             -20px -20px 60px lightgrey;
+  box-shadow:  20px 20px 60px gold, 
+             -20px -20px 60px gold;
   margin:1vw;
   padding:10px;
+  background-color:grey;
+  font:black;
+  transition: box-shadow 2s font 5s background-color 5s;
 }
 
 .gameDetail:hover{
-
+  background-color:black;
+  color:white;
+  box-shadow:  20px 20px 60px white, 
+             -20px -20px 60px white;
 }
