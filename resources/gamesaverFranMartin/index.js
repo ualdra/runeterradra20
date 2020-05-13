@@ -95,7 +95,7 @@ function firstCall() {
             }else{
                 main();
             }
-        }, 2000);
+        }, 50);
     });
 
     
@@ -184,9 +184,8 @@ function httpRequest(){
     const data = JSON.stringify(game);
 
     const options = {
-        hostname: 'http://apis.manelme.com/replay',
-        port: 8081,
-        path: '/games',
+        hostname: 'apis.manelme.com',
+        path: '/replay/games',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
