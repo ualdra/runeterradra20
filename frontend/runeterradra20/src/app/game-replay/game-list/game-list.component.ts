@@ -10,23 +10,47 @@ import { Router } from '@angular/router';
 export class GameListComponent implements OnInit {
   games;
   countPlays;
+  playStyle;
   constructor(private gameService: GameService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-    console.log("lol");
     this.getGames();
   }
 
-  getGames():void{
+ async getGames(){
     //this.gameService.getGames().subscribe(games => this.games = games);
-    this.gameService.getGames().subscribe((datos:any) => {
+     await this.gameService.getGames().subscribe(async (datos:any) =>{
       console.log(datos._embedded.games)
       this.games = datos._embedded.games;
-      for(let i = 0;i<this.games.length;i++){
-        //this.games[i].backgroundImage = this.getBackgroundImage(this.games[i]);
-        this.games[i].playsCount = Object.entries(this.games[i].Plays).length;
+      for(let n = 0;n<this.games.length;n++){
+        let cardFound = false;
+        let vargame:any = Object.entries(this.games[n].Plays);
+        this.games[n].playsCount = vargame.length;
+        for(let i = 0;i<vargame.length;i++){
+          for(let j = 0;j < vargame[i].length;j++){
+            let jugada:any = vargame[i][j];
+            for(let k = 0;k< jugada.length;k++){
+              if(jugada[k]["CardCode"]!==undefined && jugada[k]["CardCode"]!=="face"){
+                if(jugada[k]["LocalPlayer"]=='true'){
+                  await this.gameService.getCardByCode(jugada[k]["CardCode"]).subscribe((datosCard:any) =>{
+                    if(datosCard.supertype == "Champion"){
+                      this.games[n].backgroundImage = datosCard.assets[0].fullAbsolutePath;
+                      cardFound = true;
+                    }
+                  });
+                }
+              }
+              if(cardFound) break;
+            }
+            if(cardFound) break;
+          }
+          if(cardFound){
+            console.log(this.games[n].backgroundImage);
+            break;
+          }
+        }
       }
       console.log(Object.entries(this.games[0].Plays).length);
     });

@@ -27,7 +27,6 @@ body {
 
 .main-background {
   text-align: justify;
-  /*background: repeat url(../../../assets/background-dark-grey-noise.jpg) 0 0;*/
   margin-top: 0;
 }
 
@@ -44,8 +43,6 @@ li {
 li:hover {
   color: black;
   font-size: 25px;
-  /*font-size: 25px;
-    border-style:double;*/
   border-width: 20px;
   background-color: #ffc250;
   opacity: 60%;
@@ -69,4 +66,6 @@ li:hover {
 }
 
 .gameDetail:hover {
+  
 }
+
