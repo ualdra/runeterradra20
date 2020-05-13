@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-main-selector',
@@ -9,11 +11,24 @@ import { LoginService } from '../login.service';
 export class MainSelectorComponent implements OnInit {
 
   constructor(
-    private authenticationService: LoginService) { }
+    private authenticationService: LoginService,
+    private route: Router) { }
   cards: any[] = [];
+  user : any;
 
   ngOnInit(): void {
-    this.getCards();
+    if(localStorage.getItem("token") == null){
+      this.route.navigate(['/login']);
+    }
+    else{
+      this.authenticationService.getUserByToken(localStorage.getItem("token")).subscribe(
+        (data : any) => {
+          this.user = data;
+          console.log(data);
+        }
+      );
+      this.getCards();
+    }
   }
 
   getCards() {
@@ -59,6 +74,10 @@ export class MainSelectorComponent implements OnInit {
   deleteDescription() {
     var description = document.querySelector('.text-description') as HTMLElement;
     description.style.display = 'none';
+  }
+
+  signOut(){
+    localStorage.removeItem("token");
   }
 
 }

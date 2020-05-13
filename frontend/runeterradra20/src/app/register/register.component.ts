@@ -21,14 +21,13 @@ export class RegisterComponent implements OnInit {
       data => {
          this.authenticationService.login(email, password).subscribe(
           next => {
-            console.log("hola")
             this.route.navigate(['selector']);
           },
           error => {
             console.log(error);
           },
           () => {
-            console.log("hola2");
+            
           }
         )
       },

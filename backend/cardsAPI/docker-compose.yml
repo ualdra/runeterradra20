@@ -10,9 +10,11 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: cardsAPI
-  cards_api:
-    container_name: cards_api
-    build: .
-    restart: always
     ports:
-      - 8080:8080
+      - 5432:5432
+  # cards_api:
+  #   container_name: cards_api
+  #   build: .
+  #   restart: always
+  #   ports:
+  #     - 8080:8080

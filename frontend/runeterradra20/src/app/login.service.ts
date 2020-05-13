@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { LocalStorage } from '@ngx-pwa/local-storage';
@@ -59,11 +58,21 @@ export class LoginService {
     )
   }
 
+  getUserByToken(token: any){
+    const url = `${this.apiUrl}/checktoken`;
+    console.log(token);
+    return this.http.post(url, {"token" : token}, this.httpOptions);
+  }
+
   async getCards(){
     return await this.http.get(this.apiCards).toPromise();
   }
 
   deleteUser(user: any){
     return this.http.delete(this.apiUrl + '/auth/users/2');
+  }
+
+  isLogged(){
+    return this.isLoggedIn;
   }
 }
