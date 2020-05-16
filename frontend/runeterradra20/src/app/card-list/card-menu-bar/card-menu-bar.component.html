@@ -1,6 +1,16 @@
-<nav class="fixed-nav-bar">
-    <div id="menu" class="menu">
-        <input class="input-item center" type="text" placeholder="region, name, description">
+<div class="topnav" id="myTopnav">
+
+    <div class="elementContainer">
+
+        <a *ngFor="let region of regions">
+            <!-- <img (click)="selectRegion(region._links.cards.href)" class="imageRegion" [src]="region.iconAbsolutePath"> -->
+            <img (click)="selectRegion(region.name)" class="imageRegion" id={{region.name}}
+                [src]="region.iconAbsolutePath">
+
+        </a>
+        <input class="input-item center" (keyup)="onKey($event)" type="text" placeholder="region, name, description">
+
     </div>
 
-</nav>
+
+</div>

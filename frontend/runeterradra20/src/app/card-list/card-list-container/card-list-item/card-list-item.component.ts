@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CardService } from '../../../card.service';
 
 @Component({
@@ -7,9 +7,11 @@ import { CardService } from '../../../card.service';
   styleUrls: ['./card-list-item.component.css'],
 })
 export class CardListItemComponent implements OnInit {
+  @Input() card: any;
+
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
-    this.cardService.getCards();
+    //this.cardService.getCards();
   }
 }

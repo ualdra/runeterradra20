@@ -7,6 +7,8 @@ import { CardListDetailComponent } from './card-list-container/card-list-detail/
 import { CardListRoutingModule } from '../card-list/card-list-routing.module';
 import { CardService } from '../card.service';
 import { CardListComponent } from './card-list/card-list.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ModalModule } from './_modal';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,12 @@ import { CardListComponent } from './card-list/card-list.component';
     CardListDetailComponent,
     CardListComponent,
   ],
-  imports: [CommonModule, CardListRoutingModule],
+  imports: [
+    CommonModule,
+    CardListRoutingModule,
+    InfiniteScrollModule,
+    ModalModule,
+  ],
   providers: [CardService],
   exports: [
     CardMenuBarComponent,

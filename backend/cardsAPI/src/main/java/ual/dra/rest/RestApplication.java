@@ -82,7 +82,7 @@ public class RestApplication {
             System.out.println(token);
             
             if (token == null) {
-                // throw new MyException();
+                throw new MyException();
             }
 
 

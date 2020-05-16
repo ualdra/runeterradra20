@@ -1,9 +1,29 @@
-<p>card-list-container works!</p>
-<div class="container">
+<div class="container" id="blur" infiniteScroll [infiniteScrollDistance]="2" (scrolled)="onScrollEnd()">
 
-    <app-card-list-item *ngFor="let card of cards">
+
+    <app-card-list-item (click)="onToggleDialogBox(card)" id=" photos" *ngFor="let card of list" [card]="card">
 
     </app-card-list-item>
+    
+    <app-card-list-detail [cardInput]="cardTemp" id="blur" class="active">
+
+    </app-card-list-detail>
+
+    <jw-modal id="error" >
+        <div id="popup" class="active">
+
+            <div id="x">
+                <a (click)="closeModal('error')">  + </a>
+            </div>
+
+            <p *ngIf="error">{{error.error.message}}</p>
+
+        </div>
+        
+
+        </jw-modal>
+
 
 </div>
+
 <app-card-list-detail></app-card-list-detail>

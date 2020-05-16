@@ -1,12 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpParams,
+  HttpRequest,
+} from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { Subject } from 'rxjs';
+import { environment } from './../environments/environment';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
-const httpOptions = {
+
+/* const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: 'my-auth-token',
+    'Access-Control-Allow-Origin': '*',
+
+    // Authorization: 'my-auth-token',
   }),
-};
+  mode: 'no-cors',
+}; */
+
+
+
+
 
 @Injectable({
   providedIn: 'any',
@@ -23,7 +41,46 @@ export class CardService {
     withCredentials?: boolean;
   }; */
 
+  // Observable string sources
+
+  private httpOptions = {
+    headers: {
+      Accept: '*/*',
+    },
+    params: {
+      token: localStorage.getItem('token')   // cambiar ese token estático por this.localStorage.token. $2a$10$x0gl0Q0qouZrVEkepW1ArucfXQlIkr7mlEvIItvDecShdy8apO/xq
+    }
+  };
+
+  cards: any;
+
+  private regionSelectedSource = new Subject<string>();
+  private searchWordSource = new Subject<string>();
+
+  // Observable string streams
+
+  regionSelected$ = this.regionSelectedSource.asObservable();
+  searchWord$ = this.searchWordSource.asObservable();
+
+  // Service message commands
+  setRegion(region: string) {
+    this.regionSelectedSource.next(region);
+  }
+
+  setSearchWord(word: string) {
+    this.searchWordSource.next(word);
+  }
+
   getCards() {
-    return this.http.get('localhost:8080/api/cards');
+    return this.http.get(environment.APIEndpoint + '/cards', this.httpOptions);   // para local quitar /data 
+  }
+
+  getRegions(): any {
+    return this.http.get(environment.APIEndpoint + '/regions', this.httpOptions);
+  }
+
+  getRegion(region: string): any {
+    console.log(region);
+    return this.http.get(environment.APIEndpoint + '/regions/' + region, this.httpOptions);
   }
 }

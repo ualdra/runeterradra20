@@ -1,4 +1,4 @@
-.fixed-nav-bar {
+/* .fixed-nav-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,22 +6,16 @@
   z-index: 9999;
   width: 100%;
   height: 50px;
-  background-color: #696053;
+  background-color: #111111;
 }
 
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
 
-/* The element at the top of the page right after the fixed navigation bar
-   MUST have sufficient top margin or else it will be covered by the bar */
+
+
 .content {
   margin-top: 20px;
 }
 
-/* Example responsive navigation menu  */
 .fixed-nav-bar li,
 .fixed-nav-bar a {
   height: 50px;
@@ -43,10 +37,7 @@
 .menu-items {
   display: inline-block;
 }
-.input-item {
-  margin-top: 5px;
-  border-radius: 18px;
-}
+
 .sitename {
   display: inline-block;
   margin-right: 20px;
@@ -56,6 +47,7 @@ a.sitename,
 a:visited.sitename {
   color: #e0e0e0;
 }
+
 .menu-items li {
   display: inline-block;
   margin-right: 10px;
@@ -121,5 +113,179 @@ a:visited.sitename {
   .show,
   .hide {
     font-size: 14px;
+  }
+}
+ */
+.elementContainer {
+  margin-left: 10px;
+}
+
+.input-item[type="text"] {
+  border: 2px solid rgb(247, 238, 162);
+  background-color: rgb(97, 93, 60);
+  color: rgb(247, 238, 162);
+  transition: width 0.4s ease-in-out;
+  width: 180px;
+  font-size: 16px;
+  background-position: 10px 10px;
+  padding: 12px 20px 12px 10px;
+
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: rgb(247, 238, 162);
+  opacity: 1; /* Firefox */
+}
+
+.input-item[type="text"]:focus {
+  width: 40%;
+  border: 2px solid rgb(255, 231, 16);
+}
+
+.center {
+  margin: 0;
+  position: relative;
+  top: 1em;
+  left: 2em;
+}
+
+.imageRegion {
+  width: 40px;
+  height: 40px;
+}
+
+.active {
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  /* background-color: #333;*/
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 80px;
+  background-color: #111111;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: rgb(253, 245, 175);
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgb(255, 233, 35);
+  color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
   }
 }

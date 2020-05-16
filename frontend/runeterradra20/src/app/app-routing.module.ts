@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: 'cards',
     loadChildren: () =>
       import('./card-list/card-list.module').then((m) => m.CardListModule),
   },
+  {
+    path: '', loadChildren: () => import('./login-module/login-module.module').then( m => m.LoginModuleModule)
+  },
+  {
+    path:'', redirectTo: '', pathMatch: 'full'
+  }
 ];
 
 @NgModule({
