@@ -27,14 +27,24 @@ export class CardInGameComponent implements OnInit, OnChanges {
     this.navW = window.innerWidth;
     this.navH = window.innerHeight;
     //console.log(this.navW+" "+this.navH);
-    if(this.card.CardCode!="face")
+    if(this.card.CardCode!="face"){
+      if(this.card.CardCode[1]=="1")
       this.cardStyle = {
         bottom: ((this.card.TopLeftY*this.navH)/this.screenH)-((this.card.Height*this.navW)/this.screenW)+'px', 
         left: (this.card.TopLeftX*this.navW)/this.screenW+'px', 
         height: (this.card.Height*this.navW)/this.screenW+'px', 
         width: (this.card.Width*this.navW)/this.screenW+'px', 
-        background: 'url(http://dd.b.pvp.net/1_0_0/set1/en_us/img/cards/' + this.card.CardCode + '.png)', 
+        background: 'url(http://dd.b.pvp.net/latest/set1/en_us/img/cards/' + this.card.CardCode + '.png)', 
         'background-size': 'contain', 'background-repeat':'no-repeat'}
+      if(this.card.CardCode[1]=="2")
+      this.cardStyle = {
+        bottom: ((this.card.TopLeftY*this.navH)/this.screenH)-((this.card.Height*this.navW)/this.screenW)+'px', 
+        left: (this.card.TopLeftX*this.navW)/this.screenW+'px', 
+        height: (this.card.Height*this.navW)/this.screenW+'px', 
+        width: (this.card.Width*this.navW)/this.screenW+'px', 
+        background: 'url(http://dd.b.pvp.net/latest/set2/en_us/img/cards/' + this.card.CardCode + '.png)', 
+        'background-size': 'contain', 'background-repeat':'no-repeat'}
+    }
     else 
       this.cardStyle = {
         bottom: ((this.card.TopLeftY*this.navH)/this.screenH)-((this.card.Height*this.navW)/this.screenW)+'px', 
