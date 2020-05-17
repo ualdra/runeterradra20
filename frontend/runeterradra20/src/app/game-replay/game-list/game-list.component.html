@@ -4,12 +4,14 @@
       Games of Runaterra
     </h2>
   </header> -->
+  <header><p id="loggedAs"> You are logged as <span id="spanMail">mehmehmeh@gmail.com&nbsp;</span> <a href="">logout</a></p></header>
+  
   <div class = "gamesContainer">
-    <div class = "gameDetail block" *ngFor="let game of games" (click)="gameDetail(game)" [ngStyle]="{background: 'url('+game.backgroundImage+')', 'background-size': 'cover', 'background-repeat':'no-repeat'}">
-      <p>Jugadores: {{game.PlayerName}} vs {{game.OpponentName}} </p>
-      <p>Resolucion: {{game.ScreenWidth}}/{{game.ScreenHeight}}</p>
-      <p>Fecha: {{game.GameDate}}</p>
-      <p>NumRondas: {{game.playsCount}}</p>
+    <div class = "gameDetail block" *ngFor="let game of games" (click)="gameDetail(game)" [ngStyle]="game.style">
+      <p id="vs">{{game.PlayerName}} vs {{game.OpponentName}} </p>
+      <!-- <p>Resolucion: {{game.ScreenWidth}}/{{game.ScreenHeight}}</p> -->
+      <p id="gameDate">{{textualdate(game.GameDate)}}</p>
+      <!-- <p>NumRondas: {{game.playsCount}}</p> -->
     </div>
   </div>
 </div>
