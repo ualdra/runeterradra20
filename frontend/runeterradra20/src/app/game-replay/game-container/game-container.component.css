@@ -1,0 +1,58 @@
+.title1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: .02em;
+  line-height: 1.25;
+  font-size: 3.6rem;
+  color: #c49250;
+  padding: 0 10%;
+  transition: font-size 1s;
+  transition-delay: 0.5s;
+}
+
+.title1:hover{
+  font-size: 5rem;
+}
+
+.game-list {
+
+}
+
+.main-background {
+  text-align: center;
+  background: no-repeat url(https://static.invenglobal.com/upload/image/2020/01/22/i1579710518053578.png) 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  overflow: hidden;
+}
+
+#back-button {
+  position: absolute;
+  right: 220px;
+  bottom: 10px;
+}
+
+#play-button{
+  position: absolute;
+  right: 160px;
+  bottom: 10px;
+}
+
+#pause-button{
+  position: absolute;
+  right: 100px;
+  bottom: 10px;
+}
+
+#forward-button {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+

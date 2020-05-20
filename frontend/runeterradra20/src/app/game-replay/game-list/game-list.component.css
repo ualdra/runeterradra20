@@ -1,0 +1,93 @@
+.game-list {
+  position: relative;
+  margin: 4rem auto 0;
+  max-width: 150rem;
+}
+
+.main-background {
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+  text-align: justify;
+  margin-top: 0;
+}
+
+.the-true-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #434343;
+  background-size: 50px 50px;
+  background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+}
+
+.gamesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  grid-gap: 0.8vw;
+}
+
+.gameDetail {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  height: 15vw;
+  width: 30vw;
+  box-shadow: 2px 2px grey, 4px 4px lightgrey, 6px 6px grey, 8px 8px lightgrey;
+  margin: 1vw;
+  text-align: center;
+  text-shadow:black 1px 1px 3px, black -1px -1px 3px;
+  color: #FFFFFF;
+  border-radius: 15px;
+  border-style: solid;
+  transition: box-shadow 0.5s;
+}
+
+#vs {
+  font-size: 1.35vw;
+  font-family: Roboto;
+}
+#gameDate{
+  position: absolute;
+  font-size: 0.99vw;
+  right: 10px !important;
+  bottom: 10px !important;
+}
+
+#duration {
+  position:absolute;
+  font-size: 0.99vw;
+  left: 10px !important;
+  bottom: 10px !important;
+}
+
+#loggedAs{
+  position: absolute;
+  right: 20px;
+  background-color: #ffffff66;
+  font-family: Roboto;
+  border-radius: 10px;
+  padding: 5px;
+  border-color: white;
+  border-style: groove;
+}
+#spanMail{
+  font-weight: bold;
+}
+
+#logout {
+  border-style: solid;
+  border-radius: 10px;
+  padding: 3px;
+  border-color: black;
+  background: #0000009e;
+  color: white;
+}
+
+.gameDetail:hover {
+  box-shadow: 5px 5px grey, 10px 10px lightgrey, 15px 15px grey, 20px 20px lightgrey;
+}
+
