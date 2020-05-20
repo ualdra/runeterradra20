@@ -1,0 +1,8 @@
+FROM openjdk:11
+
+RUN mkdir /home/gamesAPI/
+WORKDIR /home/gamesAPI/
+COPY ./gamesapi-0.0.1-SNAPSHOT.jar /home/gamesAPI/gamesAPI.jar
+EXPOSE 8081
+
+CMD [ "java", "-jar", "gamesAPI.jar" ]

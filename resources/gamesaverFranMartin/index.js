@@ -95,7 +95,7 @@ function firstCall() {
             }else{
                 main();
             }
-        }, 500);
+        }, 50);
     });
 
     

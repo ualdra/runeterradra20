@@ -1,0 +1,14 @@
+{
+  "name": "postcards",
+  "version": "1.0.0",
+  "description": "A postcards for Runeterra",
+  "main": "postCards.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fran Martin",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}

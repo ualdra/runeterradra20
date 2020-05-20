@@ -1,0 +1,18 @@
+# Use postgres/example user/password credentials
+version: "3.1"
+
+services:
+  cardsDB:
+    container_name: cardsDB
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: cardsAPI
+  cards_api:
+    container_name: cards_api
+    build: .
+    restart: always
+    ports:
+      - 8080:8080

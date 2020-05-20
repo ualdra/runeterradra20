@@ -5,8 +5,14 @@ import { GameContainerComponent } from './game-replay/game-container/game-contai
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/games', pathMatch: 'full' },
-  {path: 'games', loadChildren: () => import('./game-replay/game-replay.module').then(m => m.GameReplayModule) }
+  {path: 'games', loadChildren: () => import('./game-replay/game-replay.module').then(m => m.GameReplayModule) },
+  {
+    path: '', loadChildren: () => import('./login-module/login-module.module').then( m => m.LoginModuleModule)
+  },
+  {
+    path:'', redirectTo: '', pathMatch: 'full'
+  }
+
 ];
 
 @NgModule({
