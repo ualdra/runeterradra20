@@ -15,20 +15,19 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authenticationService: LoginService, 
-    private route: Router ) { }
+    private route: Router) { }
 
   ngOnInit(): void {
-    this.getCards(); 
+    this.getCards();
   }
 
   login(email: string, password: string): void {
     this.authenticationService.login(email, password).subscribe(
       (next: any) => {
-        console.log(next);
         console.log("is logged in")
         localStorage.setItem("token", next.token);
         this.authenticationService.deleteUser(next)
-        this.route.navigate(['selector']);
+        this.route.navigate(['selector', {logged: true}]);
       },
       error => {
         console.log(error);

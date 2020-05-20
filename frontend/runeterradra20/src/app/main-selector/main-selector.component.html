@@ -5,7 +5,7 @@
     <div class="selector-image"></div>
     <div class="selector-container">
         <div>
-            <p><a class="selector-button" [routerLink]="['/login']" routerLinkActive="router-link-active" >X</a></p>
+            <p class="signOut"><a class="selector-button" [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="signOut()" >X</a></p>
         </div>
         <div class="card-selector">
             <div (mouseenter)="addDescriptionCardSelector()" (mouseleave)="deleteDescription()" class="selector-item-card">
