@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="app-login">
+    <div class="login-image"></div>
+    <div class="login-container">
+        <div></div>
+        <div>
+            <form>
+                <div>
+                    <p>Login</p>
+                </div>
+                <div>
+                    <input class="login-input" #email ngModel type="email" placeholder="Email"
+                        formControlName="email" required />
+                </div>
+                <div>
+                    <input class="login-input" #password ngModel type="password" placeholder="Password"
+                        formControlName="password" required />
+                </div>
+                <div>
+                    <button class="login-button" (click)="login(email.value, password.value)" type="button">Iniciar sesión</button>
+                </div>
+            </form>
+            
+        </div>
+        <div>
+            <p><a class="register-button" [routerLink]="['/register']" routerLinkActive="router-link-active" >Create una cuenta</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+.app-login {
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "login-image login-container";
+  grid-template-columns: minmax(80%, 20%);
+  grid-gap: 0;
+}
+
+.login-image {
+  grid-area: login-image;
+  background-color: #80808014;
+  background-size: cover;
+}
+
+.login-main-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.login-container {
+  grid-area: login-container;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.login-input {
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 11px;
+  background-color: #80808047;
+}
+
+.login-button {
+  border-radius: 5px;
+  border-color: #d5d5d5;
+  padding: 7px 15px;
+  background-color: whitesmoke;
+}
+
+.register-button {
+  text-decoration: none;
+  color: black !important;
+}
