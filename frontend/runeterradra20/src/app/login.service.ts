@@ -22,7 +22,6 @@ export class LoginService {
     params: {
       token: localStorage.getItem('token')
     }
-  };
   private token: any;
   private isLoggedIn: any = false
   private localStorage: LocalStorage;
