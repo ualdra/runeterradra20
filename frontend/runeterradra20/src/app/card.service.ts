@@ -46,9 +46,6 @@ export class CardService {
   private httpOptions = {
     headers: {
       Accept: '*/*',
-    },
-    params: {
-      token: localStorage.getItem('token')   // cambiar ese token estático por this.localStorage.token. $2a$10$x0gl0Q0qouZrVEkepW1ArucfXQlIkr7mlEvIItvDecShdy8apO/xq
     }
   };
 

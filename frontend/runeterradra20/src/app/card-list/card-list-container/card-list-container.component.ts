@@ -105,13 +105,7 @@ export class CardListContainerComponent implements OnInit {
       this.add20ToArray();
       
     },  error =>{
-        if (error){
-          console.log("error")
-          console.log(error.error.message)
-          this.error = error;
-          this.openModal('error');
-
-        }
+       
     });
   }
 

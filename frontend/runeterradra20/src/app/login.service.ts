@@ -18,10 +18,8 @@ export class LoginService {
   httpOptions = {
     headers: {
       Accept: '*/*',
-    },
-    params: {
-      token: localStorage.getItem('token')
     }
+  }
   private token: any;
   private isLoggedIn: any = false
   private localStorage: LocalStorage;
