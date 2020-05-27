@@ -10,9 +10,15 @@ export class LoginService {
 
   private apiUrl = 'http://apis.manelme.com/auth';
   private apiCards = 'http://apis.manelme.com/data/cards';
-  httpOptions = {
+  /* httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  */
+
+  httpOptions = {
+    headers: {
+      Accept: '*/*',
+    }
   private token: any;
   private isLoggedIn: any = false
   private localStorage: LocalStorage;

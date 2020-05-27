@@ -105,6 +105,7 @@ export class CardListContainerComponent implements OnInit {
   }
 
  
+
   add20ToArray() {
     // const length = this.list.length;
 
