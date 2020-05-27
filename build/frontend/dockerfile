@@ -1,0 +1,3 @@
+FROM nginx
+COPY ./runeterra20 /usr/share/nginx/html
+EXPOSE 80
