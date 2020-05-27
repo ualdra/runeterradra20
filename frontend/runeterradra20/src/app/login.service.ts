@@ -19,6 +19,7 @@ export class LoginService {
     headers: {
       Accept: '*/*',
     }
+  }
   private token: any;
   private isLoggedIn: any = false
   private localStorage: LocalStorage;

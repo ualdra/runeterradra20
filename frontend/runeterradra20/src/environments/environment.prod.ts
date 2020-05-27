@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  APIEndpoint: "http://apis.manelme.com"
+  APIEndpoint: "http://apis.manelme.com/data"
 
 };
