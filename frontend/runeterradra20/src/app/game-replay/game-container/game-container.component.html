@@ -1,0 +1,7 @@
+<div class="main-background">
+  <div class="game-list">
+      <app-card-in-game class="card" *ngFor="let card of game.Plays[currentPlay]" [card]=card [screenW]="game.ScreenWidth" [screenH]="game.ScreenHeight"></app-card-in-game>
+  </div>
+  <app-replay-controlls (propagar)="procesarPropagar($event)"></app-replay-controlls>
+</div>
+

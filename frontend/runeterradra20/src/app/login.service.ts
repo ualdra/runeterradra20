@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 
@@ -10,12 +10,17 @@ export class LoginService {
 
   private apiUrl = 'http://apis.manelme.com/auth';
   private apiCards = 'http://apis.manelme.com/data/cards';
+  /* httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+  */
+
   httpOptions = {
     headers: {
       Accept: '*/*',
     },
     params: {
-      token: 'prueba'
+      token: localStorage.getItem('token')
     }
   };
   private token: any;
@@ -41,12 +46,9 @@ export class LoginService {
       'password': password,
       'email': email
     }
-    
-    
     return this.http.post(url, user, this.httpOptions);
   }
 
-  
   getToken(){
     return this.localStorage.getItem('token').pipe(
       tap(
@@ -73,17 +75,6 @@ export class LoginService {
   }
 
   async getCards(){
-    if (this.isLoggedIn){
-      this.httpOptions = {
-        headers: {
-          Accept: '*/*',
-        },
-        params: {
-          token: 'prueba'
-        }
-      };
-    }
-
     return await this.http.get(this.apiCards).toPromise();
   }
 

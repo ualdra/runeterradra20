@@ -5,9 +5,9 @@
     <div class="selector-image"></div>
     <div class="selector-container">
         <div>
-            <p class="signOut"> {{user.email}} <a class="selector-button" [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="signOut()" >X</a></p>
+            <p class="signOut"><a class="selector-button" [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="signOut()" >X</a></p>
         </div>
-        <div  class="card-selector">
+        <div class="card-selector">
             <div routerLink="/cards" (mouseenter)="addDescriptionCardSelector()" (mouseleave)="deleteDescription()" class="selector-item-card">
                 <p class="title">Card Selector</p>
             </div>
