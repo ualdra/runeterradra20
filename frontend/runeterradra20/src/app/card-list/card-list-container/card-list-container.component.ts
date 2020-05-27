@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { CardService } from '../../card.service';
-import { ModalService } from '../_modal';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +10,6 @@ import { Subscription } from 'rxjs';
 export class CardListContainerComponent implements OnInit {
   constructor(
     private cardService: CardService,
-    private modalService: ModalService
   ) {
     this.subscription = cardService.regionSelected$.subscribe((region) => {
       this.region = region;
@@ -71,7 +69,6 @@ export class CardListContainerComponent implements OnInit {
     });
   }
 
-  error: any;
 
   region: string;
 
@@ -91,9 +88,7 @@ export class CardListContainerComponent implements OnInit {
     }
   }
 
-  openModal(id: string) {
-    this.modalService.open(id);
-  }
+  
 
   ngOnInit(): void {
     console.log(window.innerWidth);
@@ -105,20 +100,11 @@ export class CardListContainerComponent implements OnInit {
       this.add20ToArray();
       
     },  error =>{
-        if (error){
-          console.log("error")
-          console.log(error.error.message)
-          this.error = error;
-          this.openModal('error');
-
-        }
+        
     });
   }
 
-  closeModal(id: string) {
-    this.modalService.close(id);
-  }
-
+ 
   add20ToArray() {
     // const length = this.list.length;
 
@@ -156,6 +142,5 @@ export class CardListContainerComponent implements OnInit {
     this.showDialogBox = !this.showDialogBox;
 
     console.log(card);
-    this.openModal('cardDetail');
   }
 }
